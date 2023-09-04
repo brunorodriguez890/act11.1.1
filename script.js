@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded",()=>{
         .then(response=>response.json())
         .then(data => {
             console.log(data);
+            if('setup' in data){
             chiste.innerHTML=data.setup + "<br>" + data.delivery
+            }else{
+                chiste.innerHTML=data.joke;
+            }
         })
         .catch(error => console.log(error));
     })
